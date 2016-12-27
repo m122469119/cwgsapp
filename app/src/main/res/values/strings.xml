@@ -1,3 +1,29 @@
+<!--
+name命名规则说明：
+功能页面名称+控件名称缩写+控件用途
+功能页面名称说明：
+guide 引导页面
+login 登录页面
+
+控件名称说明：
+btn     button      按钮
+tv      TextView    文本显示
+et      EditText    可编辑文本框
+dig     digits      限制只能输入指定的字符
+
+控件用途说明：
+字数多使用首字母中文缩写
+字数少使用英文翻译
+-->
 <resources>
-    <string name="app_name">cwgsapp</string>
+    <string name="app_name">财务公司App</string>
+    <string name="guide_btn_ljty">立即体验</string>
+    <string name="login_tv_account">账号</string>
+    <string name="login_et_account">请输入账号</string>
+    <string name="login_dig_account">._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
+    <string name="login_tv_password">密码</string>
+    <string name="login_et_password">请输入密码</string>
+    <string name="login_dig_password">._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
+    <string name="login_btn_login">登录</string>
+    <string name="login_tv_forgetpassword">忘记密码？</string>
 </resources>

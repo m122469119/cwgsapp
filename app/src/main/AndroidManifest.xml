@@ -7,14 +7,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="com.isoftstone.finance.cwgsapp.MainActivity" android:screenOrientation="portrait" />
+        <activity android:name="com.isoftstone.finance.cwgsapp.GuideActivity" android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name="com.isoftstone.finance.cwgsapp.LoginActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
