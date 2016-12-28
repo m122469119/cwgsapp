@@ -1,6 +1,7 @@
 package com.isoftstone.finance.cwgsapp.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
@@ -159,7 +160,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void login(String userName, String password) {
         if ((!"".equals(userName)) && (!"".equals(password))) {
             this.progressDialog.show();
-            this.deviceId = ((TelephonyManager) getSystemService("phone")).getDeviceId();
+            this.deviceId = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
             this.deviceName = Build.MODEL;
             new LoginRequest(userName, password, this.deviceId);
             this.userName = userName;

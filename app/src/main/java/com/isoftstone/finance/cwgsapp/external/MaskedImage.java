@@ -43,7 +43,7 @@ public abstract class MaskedImage extends ImageView {
                 this.paint.setFilterBitmap(false);
                 this.paint.setXfermode(MASK_XFERMODE);
             }
-            int i = paramCanvas.saveLayer(0.0F, 0.0F, getWidth(), getHeight(), null, 31);
+            int i = paramCanvas.saveLayer(0.0F, 0.0F, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
             localDrawable.setBounds(0, 0, getWidth(), getHeight());
             localDrawable.draw(paramCanvas);
             if ((this.mask == null) || (this.mask.isRecycled()))
