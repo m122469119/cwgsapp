@@ -26,4 +26,5 @@ dig     digits      限制只能输入指定的字符
     <string name="login_dig_password">._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ</string>
     <string name="login_btn_login">登录</string>
     <string name="login_tv_forgetpassword">忘记密码？</string>
+    <string name="power_tv_logout">注销</string>
 </resources>
