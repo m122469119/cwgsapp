@@ -172,7 +172,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //            LoginActivity.this.startActivity(intent);
 //            LoginActivity.this.finish();
         } else {
-            Toast.makeText(this, "帐号、密码必须填写", Toast.LENGTH_SHORT).show();
+            ToastUtils.toastShort("帐号、密码必须填写");
         }
     }
 
