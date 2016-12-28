@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.isoftstone.finance.cwgsapp.R;
 
@@ -23,7 +25,13 @@ public class GuideActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     private void setTip(int paramInt) {
-        this.iv_tip[paramInt].setBackgroundResource(this.imgidarr[paramInt]);
+        for (int i = 0; i < this.iv_tip.length; i++) {
+            if(paramInt==i){
+                this.iv_tip[i].setBackgroundResource(R.mipmap.point);
+            }else{
+                this.iv_tip[i].setBackgroundResource(R.mipmap.nopoint);
+            }
+        }
     }
 
     protected void guidePager() {
@@ -38,20 +46,20 @@ public class GuideActivity extends AppCompatActivity {
                 GuideActivity.this.finish();
             }
         });
-//        ViewGroup viewGroup = (ViewGroup) findViewById(R.id.activity_guide);
+        ViewGroup viewGroup = (ViewGroup) findViewById(R.id.activity_guide);
         this.viewPager = ((ViewPager) findViewById(R.id.guide_vp));
         this.imgidarr = new int[]{R.mipmap.guide1, R.mipmap.guide2, R.mipmap.guide3, R.mipmap.guide4};
         this.iv_tip = new ImageView[this.imgidarr.length];
         for (int i = 0; i < this.iv_tip.length; i++) {
             ImageView imageView = new ImageView(this);
             imageView.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
-            imageView.setBackgroundResource(imgidarr[i]);
+            imageView.setBackgroundResource(R.mipmap.point);
             this.iv_tip[i] = imageView;
-//            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//            layoutParams.leftMargin = 5;
-//            layoutParams.rightMargin = 5;
-//            this.viewPager.addView(imageView, layoutParams);
-
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.leftMargin = 5;
+            layoutParams.rightMargin = 5;
+//            iv_tip[i].setBackgroundResource(R.mipmap.point);
+            this.viewPager.addView(imageView, layoutParams);
         }
 
         this.iv_imageViews = new ImageView[this.imgidarr.length];
@@ -69,6 +77,7 @@ public class GuideActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                Log.i("test", "onPageSelected: "+position);
                 setTip(position % iv_imageViews.length);
             }
 
