@@ -1,6 +1,7 @@
 package com.isoftstone.finance.cwgsapp.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
@@ -12,6 +13,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -158,15 +160,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void login(String userName, String password) {
         if ((!"".equals(userName)) && (!"".equals(password))) {
+
             this.progressDialog.show();
-            this.deviceId = ((TelephonyManager) getSystemService("phone")).getDeviceId();
-            this.deviceName = Build.MODEL;
-            new LoginRequest(userName, password, this.deviceId);
-            this.userName = userName;
-            this.password = password;
+//            this.deviceId = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+//            this.deviceName = Build.MODEL;
+//            new LoginRequest(userName, password, this.deviceId);
+//            this.userName = userName;
+//            this.password = password;
 //            ServerManager.getHisBind(hisbindsuccessListener(), errorListener());
+//            Intent intent = new Intent(LoginActivity.this, GuideActivity.class);
+//            LoginActivity.this.startActivity(intent);
+//            LoginActivity.this.finish();
         } else {
-            ToastUtils.toastShort("帐号、密码必须填写");
+            Toast.makeText(this, "帐号、密码必须填写", Toast.LENGTH_SHORT).show();
         }
     }
 
