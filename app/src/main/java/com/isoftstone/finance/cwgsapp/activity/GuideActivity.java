@@ -46,26 +46,32 @@ public class GuideActivity extends AppCompatActivity {
                 GuideActivity.this.finish();
             }
         });
-        ViewGroup viewGroup = (ViewGroup) findViewById(R.id.activity_guide);
+        ViewGroup viewGroup = (ViewGroup) findViewById(R.id.guide_tip);
         this.viewPager = ((ViewPager) findViewById(R.id.guide_vp));
         this.imgidarr = new int[]{R.mipmap.guide1, R.mipmap.guide2, R.mipmap.guide3, R.mipmap.guide4};
         this.iv_tip = new ImageView[this.imgidarr.length];
+        //tip作用是提示当前图片是第几页面，根据图片个数添加tip个数
         for (int i = 0; i < this.iv_tip.length; i++) {
-            ImageView imageView = new ImageView(this);
-            imageView.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
-            imageView.setBackgroundResource(R.mipmap.point);
-            this.iv_tip[i] = imageView;
+            //动态添加tip，第一个tip默认是选中的（使用point图片），其他未选中的（使用nopoint图片）
+            ImageView tipImageView = new ImageView(this);
+            tipImageView.setLayoutParams(new ViewGroup.LayoutParams(10, 10));
+            this.iv_tip[i] = tipImageView;
+            if(i == 0){
+                this.iv_tip[i].setBackgroundResource(R.mipmap.point);
+            }else{
+                this.iv_tip[i].setBackgroundResource(R.mipmap.nopoint);
+            }
+            //每个tip之间的距离是5dp
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.leftMargin = 5;
             layoutParams.rightMargin = 5;
-//            iv_tip[i].setBackgroundResource(R.mipmap.point);
-            this.viewPager.addView(imageView, layoutParams);
+            viewGroup.addView(tipImageView, layoutParams);
         }
 
         this.iv_imageViews = new ImageView[this.imgidarr.length];
         for (int j = 0; j < this.iv_imageViews.length; j++) {
-            ImageView imageView = new ImageView(this);
-            this.iv_imageViews[j] = imageView;
+            ImageView backGroundImageView = new ImageView(this);
+            this.iv_imageViews[j] = backGroundImageView;
             this.iv_imageViews[j].setBackgroundResource(this.imgidarr[j]);
         }
         this.viewPager.setAdapter(new MyAdapter());
@@ -77,12 +83,12 @@ public class GuideActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Log.i("test", "onPageSelected: "+position);
                 setTip(position % iv_imageViews.length);
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
+                //最后一页显示按钮
                 if (mposition == iv_tip.length-1) {
                     btn_in.setVisibility(View.VISIBLE);
                 }else{
