@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <include layout="@layout/topview" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15.0dip">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_office"
+                android:layout_width="match_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="@drawable/shape_banksolid"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:gravity="center"
+                    android:text="机构"
+                    android:textColor="@color/wordcolorone"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <TextView
+                    android:id="@+id/tv_office"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginLeft="20.0dip"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/wordcolortwo"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/pointright" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_currency"
+                android:layout_width="match_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/shape_banksolid"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:gravity="center"
+                    android:text="币种"
+                    android:textColor="@color/wordcolorone"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <TextView
+                    android:id="@+id/tv_currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginLeft="20.0dip"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/wordcolortwo"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/pointright" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_bankname"
+                android:layout_width="match_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/shape_banksolid"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:gravity="center"
+                    android:text="银行类别"
+                    android:textColor="@color/wordcolorone"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <EditText
+                    android:id="@+id/et_bankname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginLeft="20.0dip"
+                    android:background="#ffffffff"
+                    android:textColor="#ff8d8d8d"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/serach" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_openbank"
+                android:layout_width="match_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/shape_banksolid"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:gravity="center"
+                    android:text="开户银行"
+                    android:textColor="@color/wordcolorone"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <EditText
+                    android:id="@+id/et_openbank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginLeft="20.0dip"
+                    android:background="#ffffffff"
+                    android:textColor="#ff8d8d8d"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/serach" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_accountbelong"
+                android:layout_width="match_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/shape_banksolid"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:gravity="center"
+                    android:text="账户归属*"
+                    android:textColor="@color/wordcolorone"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <TextView
+                    android:id="@+id/tv_accountbelong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginLeft="20.0dip"
+                    android:gravity="center_vertical"
+                    android:textColor="#ff8d8d8d"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/serach" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/iv_space"
+                android:layout_width="match_parent"
+                android:layout_height="20.0dip"
+                android:maxLines="1"
+                android:text="--------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+                android:textColor="@color/spaceline"
+                android:textSize="10.0sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_screencondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="银行账号"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <EditText
+                        android:id="@+id/et_banknumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0"
+                        android:background="#ffffffff"
+                        android:hint="请输入"
+                        android:textColor="#ff8d8d8d"
+                        android:textColorHint="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_accountname"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="账户名称"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <EditText
+                        android:id="@+id/et_accountname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="1.0"
+                        android:background="#ffffffff"
+                        android:hint="请输入"
+                        android:textColor="#ff8d8d8d"
+                        android:textColorHint="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_clientname"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="客户名称"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_clientname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:background="#ffffffff"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/serach" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_inout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="镜内外"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_inout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/pointright" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_accountstate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="账户状态"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_accountstate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/pointright" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_accountnature"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="账户属性"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_accountnature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/pointright" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_accounttype"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="账户类型"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_accounttype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/pointright" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_isDirectlink"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="是否直连"
+                        android:textColor="@color/wordcolorone"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_isDirectlink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/pointright" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_openaccountstart"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="开户日期 由"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_openstart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/calender" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_openaccountend"
+                    android:layout_width="match_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginBottom="30.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/shape_banksolid"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:gravity="center"
+                        android:text="开户日期 到"
+                        android:textColor="#ff414141"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <TextView
+                        android:id="@+id/tv_openend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginLeft="20.0dip"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff8d8d8d"
+                        android:textSize="@dimen/tvsize_titlename" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@mipmap/calender" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_screenswitch"
+                android:layout_width="match_parent"
+                android:layout_height="30.0dip"
+                android:layout_marginTop="5.0dip"
+                android:background="#ffeef2f3"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_screenswitch"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/showmore" />
+
+                <TextView
+                    android:id="@+id/tv_screenswitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26.0dip"
+                    android:layout_marginLeft="5.0dip"
+                    android:gravity="center_vertical"
+                    android:text="更多过滤条件"
+                    android:textColor="#ff419cef"
+                    android:textSize="@dimen/tvsize_titlename" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40.0dip"
+                android:layout_marginTop="5.0dip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_resetting"
+                    android:layout_width="70.0dip"
+                    android:layout_height="30.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:background="@drawable/shape_solidcolor"
+                    android:gravity="center"
+                    android:text="重 置"
+                    android:textColor="@color/wordcolorthree"
+                    android:textSize="@dimen/tvsize_titlename" />
+
+                <Button
+                    android:id="@+id/btn_banksearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="40.0dip"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:background="@drawable/shape_chanpass"
+                    android:gravity="center"
+                    android:text="查 询"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/tvsize_titlename" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
