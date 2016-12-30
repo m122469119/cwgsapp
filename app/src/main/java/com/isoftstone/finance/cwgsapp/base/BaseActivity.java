@@ -106,7 +106,7 @@ public abstract class BaseActivity extends FragmentActivity
 //      this.gesCount = (1 + this.gesCount);
 //      return;
 //    }
-//    while ((!(activity instanceof PowerActivity)) || (this.gesCount > 0));
+//   e ((!(activity instanceof PowerActivity)) || (this.gesCount > 0));
 //    SharedPreferences localSharedPreferences1 = getSharedPreferences("login", 0);
 //    SharedPreferences localSharedPreferences2 = getSharedPreferences("gesture", 0);
 //    if ((localSharedPreferences1.getBoolean("Autologin", false)) && (localSharedPreferences2.getBoolean("gestureLock", false)))

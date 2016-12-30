@@ -282,55 +282,55 @@ public class BankAccountQuery extends AppCompatActivity
                 tv_content = this.tv_office;
                 startActivity(localIntent13);
                 return;
-//            case R.id.ll_currency:
-//                Intent localIntent12 = new Intent(this, QueryDialog.class);
-//                localIntent12.putExtra("clickName", "currency");
-//                localIntent12.putExtra("queryName", "bankAccount");
-//                localIntent12.putExtra("paramName", "currencyId");
-//                tv_content = this.tvCurrency;
-//                startActivity(localIntent12);
-//                return;
-//            case R.id.ll_bankname:
-//                Intent localIntent11 = new Intent(this, QueryDialog.class);
-//                localIntent11.putExtra("clickName", "bankname");
-//                localIntent11.putExtra("queryName", "bankAccount");
-//                localIntent11.putExtra("paramName", "bankTypeId");
-//                tv_content = this.etBankname;
-//                tv_content2 = this.etOpenbank;
-//                startActivity(localIntent11);
-//                return;
-//            case R.id.ll_openbank:
-//                Intent localIntent10 = new Intent(this, QueryDialog.class);
-//                localIntent10.putExtra("clickName", "openbank");
-//                localIntent10.putExtra("queryName", "bankAccount");
-//                localIntent10.putExtra("paramName", "openBankId");
-//                tv_content = this.etOpenbank;
-//                startActivity(localIntent10);
-//                return;
-//            case R.id.ll_accountbelong:
-//                Intent localIntent9 = new Intent(this, QueryDialog.class);
-//                localIntent9.putExtra("clickName", "belong");
-//                localIntent9.putExtra("queryName", "bankAccount");
-//                localIntent9.putExtra("paramName", "ownerType");
-//                tv_content = this.tvAccountbelong;
-//                startActivity(localIntent9);
-//                return;
-//            case R.id.ll_clientname:
-//                Intent localIntent8 = new Intent(this, QueryDialog.class);
-//                localIntent8.putExtra("clickName", "clientname");
-//                localIntent8.putExtra("queryName", "bankAccount");
-//                localIntent8.putExtra("paramName", "clientID");
-//                tv_content = this.tvClientname;
-//                startActivity(localIntent8);
-//                return;
-//            case R.id.ll_inout:
-//                Intent localIntent7 = new Intent(this, QueryDialog.class);
-//                localIntent7.putExtra("clickName", "inout");
-//                localIntent7.putExtra("queryName", "bankAccount");
-//                localIntent7.putExtra("paramName", "isTerritory");
-//                tv_content = this.tvInout;
-//                startActivity(localIntent7);
-//                return;
+            case R.id.ll_currency:
+                Intent localIntent12 = new Intent(this, QueryDialog.class);
+                localIntent12.putExtra("clickName", "currency");
+                localIntent12.putExtra("queryName", "bankAccount");
+                localIntent12.putExtra("paramName", "currencyId");
+                tv_content = this.tvCurrency;
+                startActivity(localIntent12);
+                return;
+            case R.id.ll_bankname:
+                Intent localIntent11 = new Intent(this, QueryDialog.class);
+                localIntent11.putExtra("clickName", "bankname");
+                localIntent11.putExtra("queryName", "bankAccount");
+                localIntent11.putExtra("paramName", "bankTypeId");
+                tv_content = this.etBankname;
+                tv_content2 = this.etOpenbank;
+                startActivity(localIntent11);
+                return;
+            case R.id.ll_openbank:
+                Intent localIntent10 = new Intent(this, QueryDialog.class);
+                localIntent10.putExtra("clickName", "openbank");
+                localIntent10.putExtra("queryName", "bankAccount");
+                localIntent10.putExtra("paramName", "openBankId");
+                tv_content = this.etOpenbank;
+                startActivity(localIntent10);
+                return;
+            case R.id.ll_accountbelong:
+                Intent localIntent9 = new Intent(this, QueryDialog.class);
+                localIntent9.putExtra("clickName", "belong");
+                localIntent9.putExtra("queryName", "bankAccount");
+                localIntent9.putExtra("paramName", "ownerType");
+                tv_content = this.tvAccountbelong;
+                startActivity(localIntent9);
+                return;
+            case R.id.ll_clientname:
+                Intent localIntent8 = new Intent(this, QueryDialog.class);
+                localIntent8.putExtra("clickName", "clientname");
+                localIntent8.putExtra("queryName", "bankAccount");
+                localIntent8.putExtra("paramName", "clientID");
+                tv_content = this.tvClientname;
+                startActivity(localIntent8);
+                return;
+            case R.id.ll_inout:
+                Intent localIntent7 = new Intent(this, QueryDialog.class);
+                localIntent7.putExtra("clickName", "inout");
+                localIntent7.putExtra("queryName", "bankAccount");
+                localIntent7.putExtra("paramName", "isTerritory");
+                tv_content = this.tvInout;
+                startActivity(localIntent7);
+                return;
             case R.id.ll_isDirectlink:
                 Intent localIntent6 = new Intent(this, QueryDialog.class);
                 localIntent6.putExtra("clickName", "isDirectlink");
@@ -339,30 +339,30 @@ public class BankAccountQuery extends AppCompatActivity
                 tv_content = this.tvIsDirectlink;
                 startActivity(localIntent6);
                 return;
-//            case R.id.ll_accountstate:
-//                Intent localIntent5 = new Intent(this, QueryDialog.class);
-//                localIntent5.putExtra("clickName", "accountstate");
-//                localIntent5.putExtra("queryName", "bankAccount");
-//                localIntent5.putExtra("paramName", "accountStatus");
-//                tv_content = this.tvAccountstate;
-//                startActivity(localIntent5);
-//                return;
-//            case R.id.ll_accountnature:
-//                Intent localIntent4 = new Intent(this, QueryDialog.class);
-//                localIntent4.putExtra("clickName", "accountnature");
-//                localIntent4.putExtra("queryName", "bankAccount");
-//                localIntent4.putExtra("paramName", "accountProperty");
-//                tv_content = this.tvAccountnature;
-//                startActivity(localIntent4);
-//                return;
-//            case R.id.ll_accounttype:
-//                Intent localIntent3 = new Intent(this, QueryDialog.class);
-//                localIntent3.putExtra("clickName", "accounttype");
-//                localIntent3.putExtra("queryName", "bankAccount");
-//                localIntent3.putExtra("paramName", "accountType");
-//                tv_content = this.tvAccounttype;
-//                startActivity(localIntent3);
-//                return;
+            case R.id.ll_accountstate:
+                Intent localIntent5 = new Intent(this, QueryDialog.class);
+                localIntent5.putExtra("clickName", "accountstate");
+                localIntent5.putExtra("queryName", "bankAccount");
+                localIntent5.putExtra("paramName", "accountStatus");
+                tv_content = this.tvAccountstate;
+                startActivity(localIntent5);
+                return;
+            case R.id.ll_accountnature:
+                Intent localIntent4 = new Intent(this, QueryDialog.class);
+                localIntent4.putExtra("clickName", "accountnature");
+                localIntent4.putExtra("queryName", "bankAccount");
+                localIntent4.putExtra("paramName", "accountProperty");
+                tv_content = this.tvAccountnature;
+                startActivity(localIntent4);
+                return;
+            case R.id.ll_accounttype:
+                Intent localIntent3 = new Intent(this, QueryDialog.class);
+                localIntent3.putExtra("clickName", "accounttype");
+                localIntent3.putExtra("queryName", "bankAccount");
+                localIntent3.putExtra("paramName", "accountType");
+                tv_content = this.tvAccounttype;
+                startActivity(localIntent3);
+                return;
             case R.id.ll_openaccountstart:
                 Time localTime2 = new Time();
                 localTime2.setToNow();

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -721,604 +722,311 @@ public class QueryDialog<T> extends BaseActivity
         this.ParamName = localIntent.getExtras().getString("paramName");
     }
 
-    protected void initView()
-    {
-        System.out.println("+++++++++++++++++++++++++++++++");
+    protected void initView() {
         this.pdg = new ProgressDialog(this, R.style.dialog);
         this.pdg.setCancelable(false);
+        this.pdg.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         this.pdg.show();
         String str = this.Clickname;
+        System.out.println("====" + str);
         System.out.println(str.hashCode());
         int i;
-        switch (str.hashCode())
-        {
+        switch (str.toString()) {
             default:
                 i = -1;
-            case -1019789636:
-                i=0;
-            case 575402001:
-                i=1;
-            case -1858338105:
-                i=2;
-            case -504236154:
-                i=3;
-            case -1392707265:
-                i=4;
-            case 1103204566:
-                i=5;
-            case 100357129:
-                i=6;
-            case 1109888644:
-                i=7;
-            case -113315564:
-                i=8;
-            case 867121895:
-                i=9;
-            case -671781126:
-                i=10;
-            case -962590849:
-                i=11;
-            case -283359969:
-                i=12;
-            case -1899156435:
-                i=13;
-            case 1466660337:
-                i=14;
-            case -1122977817:
-                i=15;
-            case 1813987907:
-                i=16;
-            case -166503005:
-                i=17;
-            case 464617052:
-                i=18;
-            case -1992240981:
-                i=19;
-            case -1072944730:
-                i=20;
-            case -899453153:
-                i=21;
-            case 2134688346:
-                i=22;
-            case -697851454:
-                i=23;
-            case -1904074789:
-                i=24;
-            case -1323899231:
-                i=25;
-            case -130296183:
-                i=26;
-            case -1650756277:
-                i=27;
-            case -1294465821:
-                i=28;
-            case -738789988:
-                i=29;
-            case -1081086971:
-                i=30;
-            case -1644778772:
-                i=31;
-            case -1644778786:
-                i=32;
-            case 1808993246:
-                i=33;
-            case 1808993232:
-                i=34;
-            case 1572751118:
-                i=35;
-            case 793382201:
-                i=36;
-            case -119858318:
-                i=37;
-            case -762088279:
-                i=38;
-            case -762088293:
-                i=39;
-            case 1735386584:
-                i=40;
-            case 395087825:
-                i=41;
-            case -1572314108:
-                i=42;
-            case 1053111739:
-                i=43;
-                label402: switch (i)
-                {
-                    default:
-                        return;
-                    case 0:
-                        this.tv_dialogtitle.setText("机构");
-                        ServerManager.getQueryOffice(officesuccessListener(), errorListener());
-                        break;
-                    case 1:
-                        this.tv_dialogtitle.setText("币种");
-                        ServerManager.getQueryCurrency(currencysuccessListener(), errorListener());
-                        break;
-                    case 2:
-                        this.tv_dialogtitle.setText("银行类别");
-                        ServerManager.getQueryBankType(banktypesuccessListener(), errorListener());
-                        break;
-                    case 3:
-                        this.tv_dialogtitle.setText("开户银行");
-                        ServerManager.getQueryOAccountBank(BankAccountQuery.br.getBankTypeId(), oaccountbanksuccessListener(), errorListener());
-                        break;
-                    case 4:
-                        this.tv_dialogtitle.setText("账户归属");
-                        Accountbelong();
-                        break;
-                    case 5:
-                        this.tv_dialogtitle.setText("客户名称");
-                        ServerManager.getQueryClientMessage(clientmessagesuccessListener(), errorListener());
-                        break;
-                    case 6:
-                        this.tv_dialogtitle.setText("境内外");
-                        Inouts();
-                        break;
-                    case 7:
-                        this.tv_dialogtitle.setText("账户状态");
-                        AccountStatus();
-                        break;
-                    case 8:
-                        this.tv_dialogtitle.setText("账户属性");
-                        AccountProperty();
-                        break;
-                    case 9:
-                        this.tv_dialogtitle.setText("账户类型");
-                        AccountType();
-                        break;
-                    case 10:
-                        this.tv_dialogtitle.setText("业务类型");
-                        break;
-                    case 11:
-                        this.tv_dialogtitle.setText("收付方向");
-                        PaymentMethod();
-                        break;
-                    case 12:
-                        this.tv_dialogtitle.setText("入账状态");
-                        ReStatus();
-                        break;
-                    case 13:
-                        this.tv_dialogtitle.setText("是否直连");
-                        isDirectlink();
-                        break;
-                    case 14:
-                        this.tv_dialogtitle.setText("借款单位编号");
-                        ServerManager.getBorrowUnitCodeQuery(borrowunitcodesuccessListener(), errorListener());
-                        break;
-                    case 15:
-                        this.tv_dialogtitle.setText("汇票种类");
-                        Drafttype();
-                        break;
-                    case 16:
-                        this.tv_dialogtitle.setText("外币币种");
-                        ServerManager.getFCurrencyQuery(fcurrencysuccessListener(), errorListener());
-                        break;
-                    case 17:
-                        this.tv_dialogtitle.setText("客户编号由");
-                        ServerManager.getDaiKeKeHuNoQuery(replacecnSuccessListener(), errorListener());
-                        break;
-                    case 18:
-                        this.tv_dialogtitle.setText("客户编号至");
-                        ServerManager.getDaiKeKeHuNoQuery(replacecnSuccessListener(), errorListener());
-                        break;
-                    case 19:
-                        this.tv_dialogtitle.setText("外币币种");
-                        ServerManager.getFCurrencyQuery(fcurrencysuccessListener(), errorListener());
-                        break;
-                    case 20:
-                        this.tv_dialogtitle.setText("人民币银行账户由");
-                        ServerManager.getrmbSelfAccountNoQuery(selfaccountnosuccessListener(), errorListener());
-                        break;
-                    case 21:
-                        this.tv_dialogtitle.setText("人民币银行账户至");
-                        ServerManager.getrmbSelfAccountNoQuery(selfaccountnosuccessListener(), errorListener());
-                        break;
-                    case 22:
-                        this.tv_dialogtitle.setText("外币银行账户由");
+            case "office":
+                i = 0;
+                break;
+            case "currency":
+                i = 1;
+                break;
+            case "bankname":
+                i = 2;
+                break;
+            case "openbank":
+                i = 3;
+                break;
+            case "belong":
+                i = 4;
+                break;
+            case "clientname":
+                i = 5;
+                break;
+            case "inout":
+                i = 6;
+                break;
+            case "accountstate":
+                i = 7;
+                break;
+            case "accountnature":
+                i = 8;
+                break;
+            case "accounttype":
+                i = 9;
+                break;
+//            case -671781126:
+//                i=10;
+//            case -962590849:
+//                i=11;
+//            case -283359969:
+//                i=12;
+            case "isDirectlink":
+                i = 13;
+                break;
+//            case 1466660337:
+//                i=14;
+//            case -1122977817:
+//                i=15;
+//            case 1813987907:
+//                i=16;
+//            case -166503005:
+//                i=17;
+//            case 464617052:
+//                i=18;
+//            case -1992240981:
+//                i=19;
+//            case -1072944730:
+//                i=20;
+//            case -899453153:
+//                i=21;
+//            case 2134688346:
+//                i=22;
+//            case -697851454:
+//                i=23;
+//            case -1904074789:
+//                i=24;
+//            case -1323899231:
+//                i=25;
+//            case -130296183:
+//                i=26;
+//            case -1650756277:
+//                i=27;
+//            case -1294465821:
+//                i=28;
+//            case -738789988:
+//                i=29;
+            case "insidepcurrency":
+                i = 30;
+                break;
+            case "insidepclientnums":
+                i = 31;
+                break;
+            case "insidepclientnume":
+                i = 32;
+                break;
+            case "insideaccountnums":
+                i = 33;
+                break;
+            case "insideaccountnume":
+                i = 34;
+                break;
+//            case 1572751118:
+//                i=35;
+//            case 793382201:
+//                i=36;
+//            case -119858318:
+//                i=37;
+//            case -762088279:
+//                i=38;
+//            case -762088293:
+//                i=39;
+//            case 1735386584:
+//                i=40;
+//            case 395087825:
+//                i=41;
+//            case -1572314108:
+//                i=42;
+//            case 1053111739:
+//                i=43;
+        }
+        switch (i) {
+            default:
+                return;
+            case 0:
+                this.tv_dialogtitle.setText("机构");
+                ServerManager.getQueryOffice(officesuccessListener(), errorListener());
+                break;
+            case 1:
+                this.tv_dialogtitle.setText("币种");
+                ServerManager.getQueryCurrency(currencysuccessListener(), errorListener());
+                break;
+            case 2:
+                this.tv_dialogtitle.setText("银行类别");
+                ServerManager.getQueryBankType(banktypesuccessListener(), errorListener());
+                break;
+            case 3:
+                this.tv_dialogtitle.setText("开户银行");
+                ServerManager.getQueryOAccountBank(BankAccountQuery.br.getBankTypeId(), oaccountbanksuccessListener(), errorListener());
+                break;
+            case 4:
+                this.tv_dialogtitle.setText("账户归属");
+                Accountbelong();
+                break;
+            case 5:
+                this.tv_dialogtitle.setText("客户名称");
+                ServerManager.getQueryClientMessage(clientmessagesuccessListener(), errorListener());
+                break;
+            case 6:
+                this.tv_dialogtitle.setText("境内外");
+                Inouts();
+                break;
+            case 7:
+                this.tv_dialogtitle.setText("账户状态");
+                AccountStatus();
+                break;
+            case 8:
+                this.tv_dialogtitle.setText("账户属性");
+                AccountProperty();
+                break;
+            case 9:
+                this.tv_dialogtitle.setText("账户类型");
+                AccountType();
+                break;
+            case 10:
+                this.tv_dialogtitle.setText("业务类型");
+                break;
+            case 11:
+                this.tv_dialogtitle.setText("收付方向");
+                PaymentMethod();
+                break;
+            case 12:
+                this.tv_dialogtitle.setText("入账状态");
+                ReStatus();
+                break;
+            case 13:
+                this.tv_dialogtitle.setText("是否直连");
+                isDirectlink();
+                break;
+            case 14:
+                this.tv_dialogtitle.setText("借款单位编号");
+                ServerManager.getBorrowUnitCodeQuery(borrowunitcodesuccessListener(), errorListener());
+                break;
+            case 15:
+                this.tv_dialogtitle.setText("汇票种类");
+                Drafttype();
+                break;
+            case 16:
+                this.tv_dialogtitle.setText("外币币种");
+                ServerManager.getFCurrencyQuery(fcurrencysuccessListener(), errorListener());
+                break;
+            case 17:
+                this.tv_dialogtitle.setText("客户编号由");
+                ServerManager.getDaiKeKeHuNoQuery(replacecnSuccessListener(), errorListener());
+                break;
+            case 18:
+                this.tv_dialogtitle.setText("客户编号至");
+                ServerManager.getDaiKeKeHuNoQuery(replacecnSuccessListener(), errorListener());
+                break;
+            case 19:
+                this.tv_dialogtitle.setText("外币币种");
+                ServerManager.getFCurrencyQuery(fcurrencysuccessListener(), errorListener());
+                break;
+            case 20:
+                this.tv_dialogtitle.setText("人民币银行账户由");
+                ServerManager.getrmbSelfAccountNoQuery(selfaccountnosuccessListener(), errorListener());
+                break;
+            case 21:
+                this.tv_dialogtitle.setText("人民币银行账户至");
+                ServerManager.getrmbSelfAccountNoQuery(selfaccountnosuccessListener(), errorListener());
+                break;
+            case 22:
+                this.tv_dialogtitle.setText("外币银行账户由");
 //            ServerManager.getSelfAccountNoQuery(SelfExchangeActivity.ser, selfaccountnosuccessListener(), errorListener());
-                        break;
-                    case 23:
-                        this.tv_dialogtitle.setText("外币银行账户至");
+                break;
+            case 23:
+                this.tv_dialogtitle.setText("外币银行账户至");
 //            ServerManager.getSelfAccountNoQuery(SelfExchangeActivity.ser, selfaccountnosuccessListener(), errorListener());
-                        break;
-                    case 24:
-                        this.tv_dialogtitle.setText("客户编号");
-                        ServerManager.getCMclientnoQuery(cmclientnosuccessListener(), errorListener());
-                        break;
-                    case 25:
-                        this.tv_dialogtitle.setText("上级单位");
-                        ServerManager.getCMaboveunitQuery(cmaboveunitsuccessListener(), errorListener());
-                        break;
-                    case 26:
-                        this.tv_dialogtitle.setText("客户编号");
-                        ServerManager.getVPClientNoQuery(vpclientnosuccessListener(), errorListener());
-                        break;
-                    case 27:
-                        this.tv_dialogtitle.setText("账户编号");
-                        ServerManager.getVPAccountNoQuery(vpaccountnosuccessListener(), errorListener());
-                        break;
-                    case 28:
-                        this.tv_dialogtitle.setText("客户编号由");
-                        ServerManager.getcuClientNoQuery(cuclientnosuccessListener(), errorListener());
-                        break;
-                    case 29:
-                        this.tv_dialogtitle.setText("客户编号至");
-                        ServerManager.getcuClientNoQuery(cuclientnosuccessListener(), errorListener());
-                        break;
-                    case 30:
-                        this.tv_dialogtitle.setText("币种");
-                        ServerManager.getQueryCurrency(currencysuccessListener(), errorListener());
-                        break;
-                    case 31:
-                        this.tv_dialogtitle.setText("客户编号由");
-                        ServerManager.getiaclientnoQuery(iaclientnumsuccessListener(), errorListener());
-                        break;
-                    case 32:
-                        this.tv_dialogtitle.setText("客户编号至");
-                        ServerManager.getiaclientnoQuery(iaclientnumsuccessListener(), errorListener());
-                        break;
-                    case 33:
-                        this.tv_dialogtitle.setText("账户编号由");
-                        ServerManager.getiaaccountnoQuery(iaaccountnumsuccessListener(), errorListener());
-                        break;
-                    case 34:
-                        this.tv_dialogtitle.setText("账户编号至");
-                        ServerManager.getiaaccountnoQuery(iaaccountnumsuccessListener(), errorListener());
-                        break;
-                    case 35:
-                        this.tv_dialogtitle.setText("定期存款单据号");
+                break;
+            case 24:
+                this.tv_dialogtitle.setText("客户编号");
+                ServerManager.getCMclientnoQuery(cmclientnosuccessListener(), errorListener());
+                break;
+            case 25:
+                this.tv_dialogtitle.setText("上级单位");
+                ServerManager.getCMaboveunitQuery(cmaboveunitsuccessListener(), errorListener());
+                break;
+            case 26:
+                this.tv_dialogtitle.setText("客户编号");
+                ServerManager.getVPClientNoQuery(vpclientnosuccessListener(), errorListener());
+                break;
+            case 27:
+                this.tv_dialogtitle.setText("账户编号");
+                ServerManager.getVPAccountNoQuery(vpaccountnosuccessListener(), errorListener());
+                break;
+            case 28:
+                this.tv_dialogtitle.setText("客户编号由");
+                ServerManager.getcuClientNoQuery(cuclientnosuccessListener(), errorListener());
+                break;
+            case 29:
+                this.tv_dialogtitle.setText("客户编号至");
+                ServerManager.getcuClientNoQuery(cuclientnosuccessListener(), errorListener());
+                break;
+            case 30:
+                this.tv_dialogtitle.setText("币种");
+                ServerManager.getQueryCurrency(currencysuccessListener(), errorListener());
+                break;
+            case 31:
+                this.tv_dialogtitle.setText("客户编号由");
+                ServerManager.getiaclientnoQuery(iaclientnumsuccessListener(), errorListener());
+                break;
+            case 32:
+                this.tv_dialogtitle.setText("客户编号至");
+                ServerManager.getiaclientnoQuery(iaclientnumsuccessListener(), errorListener());
+                break;
+            case 33:
+                this.tv_dialogtitle.setText("账户编号由");
+                ServerManager.getiaaccountnoQuery(iaaccountnumsuccessListener(), errorListener());
+                break;
+            case 34:
+                this.tv_dialogtitle.setText("账户编号至");
+                ServerManager.getiaaccountnoQuery(iaaccountnumsuccessListener(), errorListener());
+                break;
+            case 35:
+                this.tv_dialogtitle.setText("定期存款单据号");
 //            ServerManagergetRDTicketQuery(QueryDetailActivity.rdr, RDticketsuccessListener(), errorListener());
-                        break;
-                    case 36:
-                        this.tv_dialogtitle.setText("定期存款期限 由");
-                        ServerManager.getRDLimitQuery(RDlimitsuccessListener(), errorListener());
-                        break;
-                    case 37:
-                        this.tv_dialogtitle.setText("定期存款期限 至");
-                        ServerManager.getRDLimitQuery(RDlimitsuccessListener(), errorListener());
-                        break;
-                    case 38:
-                        this.tv_dialogtitle.setText("通知存款单号 由");
-                        ServerManager.NoticeDepositNumQueru(NDNumQuerySuccessListener(), errorListener());
-                        break;
-                    case 39:
-                        this.tv_dialogtitle.setText("通知存款单号 至");
-                        ServerManager.NoticeDepositNumQueru(NDNumQuerySuccessListener(), errorListener());
-                        break;
-                    case 40:
-                        this.tv_dialogtitle.setText("通知存款金额 由");
-                        break;
-                    case 41:
-                        this.tv_dialogtitle.setText("通知存款金额 至");
-                        break;
-                    case 42:
-                        this.tv_dialogtitle.setText("金额 由");
-                        break;
-                    case 43:
-                        this.tv_dialogtitle.setText("金额 至");
-                        break;
-                }
+                break;
+            case 36:
+                this.tv_dialogtitle.setText("定期存款期限 由");
+                ServerManager.getRDLimitQuery(RDlimitsuccessListener(), errorListener());
+                break;
+            case 37:
+                this.tv_dialogtitle.setText("定期存款期限 至");
+                ServerManager.getRDLimitQuery(RDlimitsuccessListener(), errorListener());
+                break;
+            case 38:
+                this.tv_dialogtitle.setText("通知存款单号 由");
+                ServerManager.NoticeDepositNumQueru(NDNumQuerySuccessListener(), errorListener());
+                break;
+            case 39:
+                this.tv_dialogtitle.setText("通知存款单号 至");
+                ServerManager.NoticeDepositNumQueru(NDNumQuerySuccessListener(), errorListener());
+                break;
+            case 40:
+                this.tv_dialogtitle.setText("通知存款金额 由");
+                break;
+            case 41:
+                this.tv_dialogtitle.setText("通知存款金额 至");
+                break;
+            case 42:
+                this.tv_dialogtitle.setText("金额 由");
+                break;
+            case 43:
+                this.tv_dialogtitle.setText("金额 至");
                 break;
         }
-        while (true)
-        {
-            this.lv_dialoglist.setOnItemClickListener(new OnItemClickListener()
-            {
-                public void onItemClick(AdapterView<?> paramAnonymousAdapterView, View paramAnonymousView, int paramAnonymousInt, long paramAnonymousLong)
-                {
-                    QueryDialog.this.code = ((DialogText)QueryDialog.this.arr.get(paramAnonymousInt)).getRequest();
-                    QueryDialog.this.name = ((DialogText)QueryDialog.this.arr.get(paramAnonymousInt)).getStr();
-                    TextView localTextView = (TextView)paramAnonymousView.findViewById(R.id.tv_clientid);
+//        while (true) {
+            this.lv_dialoglist.setOnItemClickListener(new OnItemClickListener() {
+                public void onItemClick(AdapterView<?> paramAnonymousAdapterView, View paramAnonymousView, int paramAnonymousInt, long paramAnonymousLong) {
+                    QueryDialog.this.code = ((DialogText) QueryDialog.this.arr.get(paramAnonymousInt)).getRequest();
+                    QueryDialog.this.name = ((DialogText) QueryDialog.this.arr.get(paramAnonymousInt)).getStr();
+                    TextView localTextView = (TextView) paramAnonymousView.findViewById(R.id.tv_clientid);
                     QueryDialog.this.et_dialogmessage.setText(localTextView.getText().toString());
                     QueryDialog.this.setValue();
                     QueryDialog.this.finish();
                 }
             });
-//            return;
-//            if (!str.equals("office"))
-//                break;
-//            i = 0;
-//            break label402;
-//            if (!str.equals("currency"))
-//                break;
-//            i = 1;
-//            break label402;
-//            if (!str.equals("bankname"))
-//                break;
-//            i = 2;
-//            break label402;
-//            if (!str.equals("openbank"))
-//                break;
-//            i = 3;
-//            break label402;
-//            if (!str.equals("belong"))
-//                break;
-//            i = 4;
-//            break label402;
-//            if (!str.equals("clientname"))
-//                break;
-//            i = 5;
-//            break label402;
-//            if (!str.equals("inout"))
-//                break;
-//            i = 6;
-//            break label402;
-//            if (!str.equals("accountstate"))
-//                break;
-//            i = 7;
-//            break label402;
-//            if (!str.equals("accountnature"))
-//                break;
-//            i = 8;
-//            break label402;
-//            if (!str.equals("accounttype"))
-//                break;
-//            i = 9;
-//            break label402;
-//            if (!str.equals("businesstype"))
-//                break;
-//            i = 10;
-//            break label402;
-//            if (!str.equals("direction"))
-//                break;
-//            i = 11;
-//            break label402;
-//            if (!str.equals("turninResult"))
-//                break;
-//            i = 12;
-//            break label402;
-//            if (!str.equals("isDirectlink"))
-//                break;
-//            i = 13;
-//            break label402;
-//            if (!str.equals("ctunitnum"))
-//                break;
-//            i = 14;
-//            break label402;
-//            if (!str.equals("disdraftkind"))
-//                break;
-//            i = 15;
-//            break label402;
-//            if (!str.equals("replacefcurrency"))
-//                break;
-//            i = 16;
-//            break label402;
-//            if (!str.equals("replacecnstart"))
-//                break;
-//            i = 17;
-//            break label402;
-//            if (!str.equals("replacecnend"))
-//                break;
-//            i = 18;
-//            break label402;
-//            if (!str.equals("selffcurrency"))
-//                break;
-//            i = 19;
-//            break label402;
-//            if (!str.equals("selfrmbbcstart"))
-//                break;
-//            i = 20;
-//            break label402;
-//            if (!str.equals("selfrmbbcend"))
-//                break;
-//            i = 21;
-//            break label402;
-//            if (!str.equals("selffcbastart"))
-//                break;
-//            i = 22;
-//            break label402;
-//            if (!str.equals("selffcbend"))
-//                break;
-//            i = 23;
-//            break label402;
-//            if (!str.equals("clientnum"))
-//                break;
-//            i = 24;
-//            break label402;
-//            if (!str.equals("aboveunit"))
-//                break;
-//            i = 25;
-//            break label402;
-//            if (!str.equals("vpoolclientnum"))
-//                break;
-//            i = 26;
-//            break label402;
-//            if (!str.equals("vpoolaccountnum"))
-//                break;
-//            i = 27;
-//            break label402;
-//            if (!str.equals("creditucnumstart"))
-//                break;
-//            i = 28;
-//            break label402;
-//            if (!str.equals("creditucnumend"))
-//                break;
-//            i = 29;
-//            break label402;
-//            if (!str.equals("insidepcurrency"))
-//                break;
-//            i = 30;
-//            break label402;
-//            if (!str.equals("insidepclientnums"))
-//                break;
-//            i = 31;
-//            break label402;
-//            if (!str.equals("insidepclientnume"))
-//                break;
-//            i = 32;
-//            break label402;
-//            if (!str.equals("insideaccountnums"))
-//                break;
-//            i = 33;
-//            break label402;
-//            if (!str.equals("insideaccountnume"))
-//                break;
-//            i = 34;
-//            break label402;
-//            if (!str.equals("rdticktnumber"))
-//                break;
-//            i = 35;
-//            break label402;
-//            if (!str.equals("rdlimitstart"))
-//                break;
-//            i = 36;
-//            break label402;
-//            if (!str.equals("rdlimitend"))
-//                break;
-//            i = 37;
-//            break label402;
-//            if (!str.equals("ndticktnumbers"))
-//                break;
-//            i = 38;
-//            break label402;
-//            if (!str.equals("ndticktnumbere"))
-//                break;
-//            i = 39;
-//            break label402;
-//            if (!str.equals("ndsubstart"))
-//                break;
-//            i = 40;
-//            break label402;
-//            if (!str.equals("ndsubend"))
-//                break;
-//            i = 41;
-//            break label402;
-//            if (!str.equals("transumform"))
-//                break;
-//            i = 42;
-//            break label402;
-//            if (!str.equals("transumto"))
-//                break;
-//            i = 43;
-//            break label402;
-//            this.tv_dialogtitle.setText("机构");
-//            ServerManager.getQueryOffice(officesuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("币种");
-//            ServerManager.getQueryCurrency(currencysuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("银行类别");
-//            ServerManager.getQueryBankType(banktypesuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("开户银行");
-//            ServerManager.getQueryOAccountBank(BankAccountQuery.br.getBankTypeId(), oaccountbanksuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("账户归属");
-//            Accountbelong();
-//            continue;
-//            this.tv_dialogtitle.setText("客户名称");
-//            ServerManager.getQueryClientMessage(clientmessagesuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("境内外");
-//            Inouts();
-//            continue;
-//            this.tv_dialogtitle.setText("账户状态");
-//            AccountStatus();
-//            continue;
-//            this.tv_dialogtitle.setText("账户属性");
-//            AccountProperty();
-//            continue;
-//            this.tv_dialogtitle.setText("账户类型");
-//            AccountType();
-//            continue;
-//            this.tv_dialogtitle.setText("业务类型");
-//            continue;
-//            this.tv_dialogtitle.setText("收付方向");
-//            PaymentMethod();
-//            continue;
-//            this.tv_dialogtitle.setText("入账状态");
-//            ReStatus();
-//            continue;
-//            this.tv_dialogtitle.setText("是否直连");
-//            isDirectlink();
-//            continue;
-//            this.tv_dialogtitle.setText("借款单位编号");
-//            ServerManager.getBorrowUnitCodeQuery(borrowunitcodesuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("汇票种类");
-//            Drafttype();
-//            continue;
-//            this.tv_dialogtitle.setText("外币币种");
-//            ServerManager.getFCurrencyQuery(fcurrencysuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号由");
-//            ServerManager.getDaiKeKeHuNoQuery(replacecnSuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号至");
-//            ServerManager.getDaiKeKeHuNoQuery(replacecnSuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("外币币种");
-//            ServerManager.getFCurrencyQuery(fcurrencysuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("人民币银行账户由");
-//            ServerManager.getrmbSelfAccountNoQuery(selfaccountnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("人民币银行账户至");
-//            ServerManager.getrmbSelfAccountNoQuery(selfaccountnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("外币银行账户由");
-////            ServerManager.getSelfAccountNoQuery(SelfExchangeActivity.ser, selfaccountnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("外币银行账户至");
-////            ServerManager.getSelfAccountNoQuery(SelfExchangeActivity.ser, selfaccountnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号");
-//            ServerManager.getCMclientnoQuery(cmclientnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("上级单位");
-//            ServerManager.getCMaboveunitQuery(cmaboveunitsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号");
-//            ServerManager.getVPClientNoQuery(vpclientnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("账户编号");
-//            ServerManager.getVPAccountNoQuery(vpaccountnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号由");
-//            ServerManager.getcuClientNoQuery(cuclientnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号至");
-//            ServerManager.getcuClientNoQuery(cuclientnosuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("币种");
-//            ServerManager.getQueryCurrency(currencysuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号由");
-//            ServerManager.getiaclientnoQuery(iaclientnumsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("客户编号至");
-//            ServerManager.getiaclientnoQuery(iaclientnumsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("账户编号由");
-//            ServerManager.getiaaccountnoQuery(iaaccountnumsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("账户编号至");
-//            ServerManager.getiaaccountnoQuery(iaaccountnumsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("定期存款单据号");
-////            ServerManager.getRDTicketQuery(QueryDetailActivity.rdr, RDticketsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("定期存款期限 由");
-//            ServerManager.getRDLimitQuery(RDlimitsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("定期存款期限 至");
-//            ServerManager.getRDLimitQuery(RDlimitsuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("通知存款单号 由");
-//            ServerManager.NoticeDepositNumQueru(NDNumQuerySuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("通知存款单号 至");
-//            ServerManager.NoticeDepositNumQueru(NDNumQuerySuccessListener(), errorListener());
-//            continue;
-//            this.tv_dialogtitle.setText("通知存款金额 由");
-//            continue;
-//            this.tv_dialogtitle.setText("通知存款金额 至");
-//            continue;
-//            this.tv_dialogtitle.setText("金额 由");
-//            continue;
-//            this.tv_dialogtitle.setText("金额 至");
         }
-    }
+//    }
 
     public void isDirectlink()
     {

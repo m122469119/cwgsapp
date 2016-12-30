@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.isoftstone.finance.cwgsapp.R;
 import com.isoftstone.finance.cwgsapp.activity.query.BankAccountQuery;
+import com.isoftstone.finance.cwgsapp.activity.query.InsideAccountActivity;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -98,8 +99,7 @@ public class AccountActivity extends AppCompatActivity
                 startActivity(new Intent(this, BankAccountQuery.class));
                 return;
             case R.id.ll_account2:
-                System.out.println("点击了内部账户信息");
-//                startActivity(new Intent(this, InsideAccountActivity.class));
+                startActivity(new Intent(this, InsideAccountActivity.class));
                 return;
         }
 
