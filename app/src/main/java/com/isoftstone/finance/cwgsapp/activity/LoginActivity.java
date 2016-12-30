@@ -41,9 +41,15 @@ import java.util.Iterator;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+* @项目名称：财务公司App
+* @类描述：登录页面对应的activity
+* @创建人：zwxiao
+* @创建时间：2016/12/29 10:24
+*/
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @Bind(R.id.username)
+    @Bind(R.id.login_et_username)
     EditText et_Username;
     @Bind(R.id.login_et_password)
     EditText et_Password;
@@ -58,10 +64,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Bind(R.id.activity_login)
     LinearLayout layout_Login;
 
-    ProgressDialog progressDialog;
-    SharedPreferences sp_Login;
-    SharedPreferences sp_LoginName;
-    SharedPreferences sp_SessionID;
+//    ProgressDialog progressDialog;
+//    SharedPreferences sp_Login;
+//    SharedPreferences sp_LoginName;
+//    SharedPreferences sp_SessionID;
 
     String deviceId;
     String deviceName;
@@ -74,34 +80,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
+        setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
+//        progressDialog = new ProgressDialog(this);
+//        progressDialog.setCancelable(false);
         init();
         initView();
     }
 
     protected void init() {
-        sp_Login = getSharedPreferences("login", 0);
-        sp_SessionID = getSharedPreferences("sessionID", 0);
-        sp_LoginName = getSharedPreferences("loginName", 0);
-        if (sp_Login.getBoolean("Autologin", false)) {
-            startActivity(new Intent(this, PowerActivity.class));
-            finish();
-        }
-        View view = View.inflate(this, R.layout.activity_login, null);
-        ButterKnife.bind(this, view);
-        setContentView(view);
+        this.iv_Deletepass = ((ImageView) findViewById(R.id.iv_deletepass));
+        this.iv_Deletepass.setOnClickListener(this);
+        this.iv_PasswordEye = ((ImageView) findViewById(R.id.iv_password_eye));
+        this.iv_PasswordEye.setOnClickListener(this);
+        this.btn_Login = ((Button) findViewById(R.id.btn_login));
+        this.btn_Login.setOnClickListener(this);
+        this.et_Username = ((EditText) findViewById(R.id.login_et_username));
+        this.et_Password = ((EditText) findViewById(R.id.login_et_password));
+//        sp_Login = getSharedPreferences("login", 0);
+//        sp_SessionID = getSharedPreferences("sessionID", 0);
+//        sp_LoginName = getSharedPreferences("loginName", 0);
+//        if (sp_Login.getBoolean("Autologin", false)) {
+//            startActivity(new Intent(this, PowerActivity.class));
+//            finish();
+//        }
     }
 
     protected void initView() {
-        this.iv_Deletepass.setOnClickListener(this);
-        this.iv_PasswordEye.setOnClickListener(this);
-        this.btn_Login.setOnClickListener(this);
-        String str = getCacheDir().getPath();
-        File userHeadFile = new File(str + "/" + "userhead.png");
-        if (userHeadFile.exists()) {
-            this.img_Headimage.setImageBitmap(BitmapFactory.decodeFile(userHeadFile.getAbsolutePath()));
-        }
+//        String str = getCacheDir().getPath();
+//        File userHeadFile = new File(str + "/" + "userhead.png");
+//        if (userHeadFile.exists()) {
+//            this.img_Headimage.setImageBitmap(BitmapFactory.decodeFile(userHeadFile.getAbsolutePath()));
+//        }
         this.et_Password.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable paramAnonymousEditable) {
                 if ((LoginActivity.this.et_Password.getText().equals("")) || (LoginActivity.this.et_Password.getText().equals(null))) {
@@ -154,14 +164,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     this.iv_PasswordEye.setImageResource(R.mipmap.showpass);
                     this.mbDisplayFlg = true;
                 }
+                break;
+            default:
+                    break;
 
         }
     }
 
     private void login(String userName, String password) {
         if ((!"".equals(userName)) && (!"".equals(password))) {
-
-            this.progressDialog.show();
+//            this.progressDialog.show();
 //            this.deviceId = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
 //            this.deviceName = Build.MODEL;
 //            new LoginRequest(userName, password, this.deviceId);
@@ -172,8 +184,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //            LoginActivity.this.startActivity(intent);
 //            LoginActivity.this.finish();
         } else {
-            ToastUtils.toastShort("帐号、密码必须填写");
+            Toast.makeText(this, "帐号、密码必须填写", Toast.LENGTH_SHORT).show();
         }
+        Intent intent = new Intent(LoginActivity.this, PowerActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 //    private Response.Listener<HisBindResult> hisbindsuccessListener() {

@@ -10,5 +10,6 @@ public class Constant {
     public static String SESSIONID = "2";
     public static String USERID= "3";
     public static String USERNAME= "4";
+    public static String LOGINNAME= "5";
 
 }

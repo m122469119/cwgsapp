@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@id/tv_companyname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中海集团财务有限公司"
+            android:textColor="@color/wordcolorone"
+            android:textSize="@dimen/tvsize_titlename" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@id/tv_matchstatus"
+                android:layout_width="50.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/shape_green"
+                android:gravity="center"
+                android:text="未通过"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/tvsize_state" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="12.0dip"
+            android:layout_height="12.0dip"
+            android:background="@mipmap/approvalhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:gravity="center"
+            android:text="创建者:"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/tvsize_detail" />
+
+        <TextView
+            android:id="@id/tv_creationname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="赵云"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/tvsize_detail" />
+
+        <ImageView
+            android:layout_width="12.0dip"
+            android:layout_height="12.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:background="@mipmap/approvaltime" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="创建时间:"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/tvsize_detail" />
+
+        <TextView
+            android:id="@id/tv_creationtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="2016-5-6 05:15:20"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/tvsize_detail" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="@color/spaceline" />
+</LinearLayout>

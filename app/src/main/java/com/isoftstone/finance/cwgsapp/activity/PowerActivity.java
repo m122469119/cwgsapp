@@ -15,7 +15,7 @@ import com.isoftstone.finance.cwgsapp.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class PowerActivity extends AppCompatActivity {
+public class PowerActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Bind(R.id.tv_logout)
     TextView tv_Logout;
@@ -39,6 +39,34 @@ public class PowerActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
+        init();
+//        initView();
     }
+
+    protected void init(){
+        iv_BusinessCenter.setOnClickListener(this);
+        iv_ManagerCenter.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            //点击业务中心
+            case R.id.iv_businessCenter:
+                this.progressDialog.dismiss();
+                Intent intent = new Intent(PowerActivity.this, MainActivity.class);
+                PowerActivity.this.startActivity(intent);
+                PowerActivity.this.finish();
+                break;
+            //点击管理中心
+            case R.id.iv_managerCenter:
+                break;
+            //点击注销
+            case R.id.tv_logout:
+            default:
+                break;
+        }
+    }
+
 
 }

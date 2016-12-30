@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/topview" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip"
+        android:background="@color/lightwhite" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="@color/spaceline" />
+
+    <ListView
+        android:id="@id/ls_matchaccess"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@null" />
+</LinearLayout>

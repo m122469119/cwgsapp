@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@id/rl_homepager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip">
+
+            <ImageView
+                style="@style/balance_iv"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/pointleft" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip"
+            android:layout_marginRight="25.0dip"
+            android:scaleType="center"
+            android:src="@mipmap/home_nav_logo" />
+    </LinearLayout>
+
+    <com.example.dell.zhapp.external.rollvviewpager.RollPagerView
+        android:id="@id/roll_homepager"
+        android:layout_width="fill_parent"
+        android:layout_height="180.0dip"
+        app:rollviewpager_hint_gravity="center"
+        app:rollviewpager_play_delay="3000" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginTop="5.0dip"
+        android:background="#ffe5e5e5"
+        android:visibility="gone" />
+
+    <RadioGroup
+        android:id="@id/rg_homepager"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_marginTop="0.0dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="0.0dip">
+
+        <RadioButton
+            android:id="@id/rb_approvaled"
+            style="@style/main_tab_bottom"
+            android:text="待审批业务"
+            android:textSize="18.0sp" />
+
+        <RadioButton
+            android:id="@id/rb_completed"
+            style="@style/main_tab_bottom"
+            android:text="已审批业务"
+            android:textSize="18.0sp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="3.0dip">
+
+        <ImageView
+            android:id="@id/homepager_img1"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="#ff004099" />
+
+        <ImageView
+            android:id="@id/homepager_img2"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="#ff004099"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <view
+        android:id="@id/pager_home"
+        class="com.isoftstone.finance.cwgsapp.external.MyViewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+</LinearLayout>

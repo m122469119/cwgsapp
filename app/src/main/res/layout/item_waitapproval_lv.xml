@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@id/adapter_evenremind_rl_1"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@id/tvleft_operationname"
+            android:layout_width="wrap_content"
+            android:layout_height="50.0dip"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10.0dip"
+            android:gravity="center"
+            android:text="银行日对账"
+            android:textColor="@color/wordcolorone"
+            android:textSize="@dimen/textsize_item_texttitle" />
+
+        <TextView
+            android:id="@id/tvleft_operation_num"
+            android:layout_width="30.0dip"
+            android:layout_height="21.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/shape_orange"
+            android:gravity="center"
+            android:text="40"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_item_texttitle" />
+    </RelativeLayout>
+</LinearLayout>
