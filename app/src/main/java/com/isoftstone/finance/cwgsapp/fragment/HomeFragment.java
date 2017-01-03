@@ -129,7 +129,7 @@ public class HomeFragment extends Fragment {
             this.pdg = new ProgressDialog(getActivity());
             this.pdg.show();
             this.pdg.setCancelable(false);
-            ServerManager.getImageIdQuery(imageidquerysuccessListener(), errorListener());
+//            ServerManager.getImageIdQuery(imageidquerysuccessListener(), errorListener());
             new StringBuilder().append(Constant.REQUEST_ADDRESS).append("mobileStartupLogo/findPictureById?id=").toString();
             this.rpv_Homepager.setPlayDelay(4000);
             this.rpv_Homepager.setAnimationDurtion(500);

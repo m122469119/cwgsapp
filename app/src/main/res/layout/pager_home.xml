@@ -32,7 +32,7 @@
             android:src="@mipmap/home_nav_logo" />
     </LinearLayout>
 
-    <com.example.dell.zhapp.external.rollvviewpager.RollPagerView
+    <com.isoftstone.finance.cwgsapp.external.rollvviewpager.RollPagerView
         android:id="@id/roll_homepager"
         android:layout_width="fill_parent"
         android:layout_height="180.0dip"

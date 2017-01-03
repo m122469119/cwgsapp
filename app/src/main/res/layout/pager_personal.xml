@@ -12,7 +12,7 @@
         android:background="@mipmap/personalback"
         android:orientation="horizontal">
 
-        <com.example.dell.zhapp.external.CircularImage
+        <com.isoftstone.finance.cwgsapp.external.CircularImage
             android:id="@id/head_image"
             android:layout_width="70.0dip"
             android:layout_height="70.0dip"

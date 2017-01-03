@@ -43,7 +43,7 @@
             android:id="@+id/iv_businessCenter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/businesscenter" />
+            android:src="@mipmap/businesscenter1" />
     </LinearLayout>
 
     <LinearLayout
@@ -57,6 +57,6 @@
             android:id="@+id/iv_managerCenter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/managercenter" />
+            android:src="@mipmap/managercenter1" />
     </LinearLayout>
 </LinearLayout>

@@ -244,7 +244,7 @@ public class PersonalFragment extends Fragment
     public void exit(Context paramContext) {
         new android.support.v7.app.AlertDialog.Builder(paramContext).setTitle("退出").setMessage("退出将删除本地数据，是否退出？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface paramAnonymousDialogInterface, int paramAnonymousInt) {
-                ServerManager.exitRequest(PersonalFragment.this.exitSuccessListener(), PersonalFragment.this.errorListener());
+//                ServerManager.exitRequest(PersonalFragment.this.exitSuccessListener(), PersonalFragment.this.errorListener());
                 paramAnonymousDialogInterface.dismiss();
             }
         }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
