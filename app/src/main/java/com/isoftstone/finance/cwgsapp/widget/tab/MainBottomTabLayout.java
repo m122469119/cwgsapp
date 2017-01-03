@@ -65,7 +65,7 @@ public class MainBottomTabLayout extends LinearLayout {
         TabClickListener tabClickListener = new TabClickListener();
         this.mIconLayouts = new View[pagerAdapter.getCount()];
         for (int i = 0; i < pagerAdapter.getCount(); i++) {
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.activity_main, this, false);
+            View view = LayoutInflater.from(getContext()).inflate(R.layout.layout_mainbottom_tab, this, false);
             this.mIconLayouts[i] = view;
             TabIconView tabIconView = (TabIconView) view.findViewById(R.id.main_bottom_tab_icon);
             tabIconView.init(this.mIconRes[i][0], this.mIconRes[i][1]);
@@ -146,30 +146,30 @@ public class MainBottomTabLayout extends LinearLayout {
             int j = 0;
             for (int i = 0; i < MainBottomTabLayout.this.getChildCount(); i++) {
                 TabIconView tabIconView = (TabIconView) MainBottomTabLayout.this.mIconLayouts[i].findViewById(R.id.main_bottom_tab_icon);
-                if(paramInt == i){
+                if (paramInt == i) {
                     tabIconView.transformPage(j);
                     textView.setTextColor(MainBottomTabLayout.this.mTextSelectedColor);
                     textView = (TextView) MainBottomTabLayout.this.mIconLayouts[i].findViewById(R.id.main_bottom_tab_text);
-                }else{
+                } else {
                     textView.setTextColor(MainBottomTabLayout.this.mTextNormalColor);
                     j = 1;
                 }
             }
-            
 
-            if (this.mScrollState == 0){
+
+            if (this.mScrollState == 0) {
                 MainBottomTabLayout.this.onViewPagerPageChanged(paramInt, 0);
             }
 
             for (int m = 0; m < MainBottomTabLayout.this.getChildCount(); m++) {
                 View view = MainBottomTabLayout.this.getChildAt(m);
-                if(paramInt == m){
+                if (paramInt == m) {
                     view.setSelected(true);
-                }else{
+                } else {
                     view.setSelected(false);
                 }
             }
-            if (MainBottomTabLayout.this.mViewPagerPageChangeListener != null){
+            if (MainBottomTabLayout.this.mViewPagerPageChangeListener != null) {
                 MainBottomTabLayout.this.mViewPagerPageChangeListener.onPageSelected(paramInt);
             }
         }
