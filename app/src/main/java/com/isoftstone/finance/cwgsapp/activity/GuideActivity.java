@@ -102,7 +102,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
             this.iv_imageViews[j].setBackgroundResource(this.imgidarr[j]);
         }
         this.viewPager.setAdapter(new MyAdapter());
-        this.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        this.viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 mposition = position;

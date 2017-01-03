@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
+
 import com.facebook.stetho.Stetho;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -55,14 +57,12 @@ public abstract class BaseActivity extends FragmentActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    System.out.println("BaseActivity");
     synchronized (mActivities)
     {
       mActivities.add(this);
       init();
       initView();
       Stetho.initializeWithDefaults(this);
-      return;
     }
   }
 
@@ -72,7 +72,6 @@ public abstract class BaseActivity extends FragmentActivity
     synchronized (mActivities)
     {
       mActivities.remove(this);
-      return;
     }
   }
 
@@ -89,7 +88,7 @@ public abstract class BaseActivity extends FragmentActivity
 
   protected void onResume()
   {
-//    super.onResume();
+    super.onResume();
 //    activity = this;
 //    if ((activity instanceof GestureLockActivity));
 //    do

@@ -3,6 +3,8 @@ package com.isoftstone.finance.cwgsapp.activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.ViewGroup;
 
 import com.isoftstone.finance.cwgsapp.R;
 import com.isoftstone.finance.cwgsapp.base.BaseActivity;
@@ -11,7 +13,6 @@ import com.isoftstone.finance.cwgsapp.fragment.PersonalFragment;
 import com.isoftstone.finance.cwgsapp.fragment.SearchFragment;
 import com.isoftstone.finance.cwgsapp.widget.tab.MainBottomTabLayout;
 import com.isoftstone.finance.cwgsapp.widget.tab.MainFragmentAdapter;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -25,16 +26,18 @@ public class MainActivity extends BaseActivity {
     private MainFragmentAdapter mMainFragmentAdapter;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        init();
-    }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//        ButterKnife.bind(this);
+//        init();
+//    }
 
     protected void init()
     {
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         this.mMainFragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager());
         HomeFragment localHomeFragment = HomeFragment.newInstance(this);
         this.mMainFragmentAdapter.addFrag(localHomeFragment);
@@ -51,8 +54,8 @@ public class MainActivity extends BaseActivity {
     {
     }
 
-    protected void onResume()
-    {
-        super.onResume();
-    }
+//    protected void onResume()
+//    {
+//        super.onResume();
+//    }
 }
