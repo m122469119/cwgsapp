@@ -21,6 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 import com.isoftstone.finance.cwgsapp.R;
+import com.isoftstone.finance.cwgsapp.base.BaseActivity;
 import com.isoftstone.finance.cwgsapp.pager.QuiceAdapter;
 import com.isoftstone.finance.cwgsapp.pager.quice.QuiceItem;
 import com.isoftstone.finance.cwgsapp.pager.quice.helper.ItemDragHelperCallback;
@@ -30,10 +31,10 @@ import com.litesuits.orm.LiteOrm;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-@TargetApi(11)
 public class SearchFragment extends Fragment
   implements View.OnClickListener
 {
+  public static BaseActivity mactivity;
   public static final int QUICE_MANAGE_RESULTCODE = 4371;
   private final String DB_NAME = "gljr.db";
   QuiceAdapter adapter;
@@ -81,11 +82,10 @@ public class SearchFragment extends Fragment
 
   private void saveQuiceItemData()
   {
-    Log.e("TAG", "hahah");
-    Iterator localIterator1 = this.tempQuiceItems.iterator();
-    while (localIterator1.hasNext())
-      if (((QuiceItem)localIterator1.next()).getItemType() == 2)
-        localIterator1.remove();
+    Iterator iterator = this.tempQuiceItems.iterator();
+    while (iterator.hasNext())
+      if (((QuiceItem)iterator.next()).getItemType() == 2)
+        iterator.remove();
     for (int i = 0; i < this.tempQuiceItems.size(); i++)
     {
       int k = ((QuiceItem)this.tempQuiceItems.get(i)).getQuiceID();
@@ -113,33 +113,32 @@ public class SearchFragment extends Fragment
 
   public void init()
   {
-    ArrayList localArrayList1 = getLiteOrm().query(QuiceItem.class);
-    if (localArrayList1.isEmpty())
+//    ArrayList list = getLiteOrm().query(QuiceItem.class);
+    ArrayList list = new ArrayList();
+    if (list.isEmpty() || list.size() == 0)
     {
-      localArrayList1.add(new QuiceItem(1, 2130903067, 1, "授信使用情况"));
-      localArrayList1.add(new QuiceItem(2, 2130903075, 1, "贷款合同"));
-      localArrayList1.add(new QuiceItem(3, 2130903068, 1, "贴现合同"));
-      localArrayList1.add(new QuiceItem(4, 2130903055, 1, "代客结售汇"));
-      localArrayList1.add(new QuiceItem(5, 2130903076, 1, "自身结售汇"));
-      localArrayList1.add(new QuiceItem(6, 2130903063, 1, "客户信息"));
-      localArrayList1.add(new QuiceItem(7, 2130903072, 1, "银行账户信息"));
-      localArrayList1.add(new QuiceItem(8, 2130903064, 1, "内部账户信息"));
-      localArrayList1.add(new QuiceItem(9, 2130903071, 1, "虚拟资金池"));
-      localArrayList1.add(new QuiceItem(11, 2130903062, 1, "交易记录"));
+      list.add(new QuiceItem(1, R.mipmap.ch_sxsyqk, 1, "授信使用情况"));
+      list.add(new QuiceItem(2, R.mipmap.ch_zqht, 1, "贷款合同"));
+      list.add(new QuiceItem(3, R.mipmap.ch_txht, 1, "贴现合同"));
+      list.add(new QuiceItem(4, R.mipmap.ch_dkjsh, 1, "代客结售汇"));
+      list.add(new QuiceItem(5, R.mipmap.ch_zsjsh, 1, "自身结售汇"));
+      list.add(new QuiceItem(6, R.mipmap.ch_khxx, 1, "客户信息"));
+      list.add(new QuiceItem(7, R.mipmap.ch_yhzhxx, 1, "银行账户信息"));
+      list.add(new QuiceItem(8, R.mipmap.ch_nbzhxx, 1, "内部账户信息"));
+      list.add(new QuiceItem(9, R.mipmap.ch_xnzjc, 1, "虚拟资金池"));
+      list.add(new QuiceItem(11, R.mipmap.ch_jyjl, 1, "交易记录"));
     }
-    ArrayList localArrayList2 = new ArrayList();
-    localArrayList2.addAll(localArrayList1);
-    Iterator localIterator = localArrayList2.iterator();
-    while (localIterator.hasNext())
-    {
-      QuiceItem localQuiceItem = (QuiceItem)localIterator.next();
-      if (!this.powerResult.contains(localQuiceItem.getName()))
-        localArrayList1.remove(localQuiceItem);
-    }
-    processData(localArrayList1);
-    ItemTouchHelper localItemTouchHelper = new ItemTouchHelper(new ItemDragHelperCallback());
-    localItemTouchHelper.attachToRecyclerView(this.recycleView);
-    this.adapter = new QuiceAdapter(this, localItemTouchHelper, this.results, this.tempQuiceItems);
+//    Iterator iterator = list.iterator();
+//    while (iterator.hasNext())
+//    {
+//      QuiceItem localQuiceItem = (QuiceItem)iterator.next();
+//      if (!this.powerResult.contains(localQuiceItem.getName()))
+//        list.remove(localQuiceItem);
+//    }
+    processData(list);
+    ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemDragHelperCallback());
+    itemTouchHelper.attachToRecyclerView(this.recycleView);
+    this.adapter = new QuiceAdapter(this, itemTouchHelper, this.results, this.tempQuiceItems);
     this.adapter.mYnotifyDataSetChanged();
     this.recycleView.setHasFixedSize(true);
     this.recycleView.setAdapter(this.adapter);
@@ -201,11 +200,10 @@ public class SearchFragment extends Fragment
 //    startActivity(localIntent1);
   }
 
-  @Nullable
-  public View onCreateView(LayoutInflater paramLayoutInflater, @Nullable ViewGroup paramViewGroup, @Nullable Bundle paramBundle)
+  public View onCreateView(LayoutInflater paramLayoutInflater,ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    View localView = View.inflate(getActivity(), R.layout.pager_testsearch, null);
-    ButterKnife.bind(this, localView);
+    View view = View.inflate(getActivity(), R.layout.pager_testsearch, null);
+    ButterKnife.bind(this, view);
     this.txtTitle.setText("搜  索");
     this.imgbtnLeft.setVisibility(View.GONE);
     this.ll_accountmanager.setOnClickListener(this);
@@ -215,19 +213,20 @@ public class SearchFragment extends Fragment
     this.ll_statementmanager.setOnClickListener(this);
     this.results = new ArrayList();
     this.tempQuiceItems = new ArrayList();
-    Bundle localBundle = getActivity().getIntent().getBundleExtra("Menus");
-    this.powerResult.clear();
-    ArrayList localArrayList = localBundle.getParcelableArrayList("menus");
-    if (localArrayList != null)
-    {
-      Iterator localIterator = localArrayList.iterator();
-      while (localIterator.hasNext())
-      {
-        PowerInfo localPowerInfo = (PowerInfo)localIterator.next();
-        this.powerResult.add(localPowerInfo.menuName);
-      }
-    }
-    return localView;
+//    Bundle localBundle = getActivity().getIntent().getBundleExtra("Menus");
+//    this.powerResult.clear();
+//    ArrayList localArrayList = localBundle.getParcelableArrayList("menus");
+//    if (localArrayList != null)
+//    {
+//      Iterator localIterator = localArrayList.iterator();
+//      while (localIterator.hasNext())
+//      {
+//        PowerInfo localPowerInfo = (PowerInfo)localIterator.next();
+//        this.powerResult.add(localPowerInfo.menuName);
+//      }
+//    }
+    init();
+    return view;
   }
 
   public void onDestroy()
@@ -245,5 +244,11 @@ public class SearchFragment extends Fragment
   {
     super.onResume();
     init();
+  }
+
+  public static SearchFragment newInstance(BaseActivity paramBaseActivity) {
+    SearchFragment searchFragment = new SearchFragment();
+    mactivity = paramBaseActivity;
+    return searchFragment;
   }
 }

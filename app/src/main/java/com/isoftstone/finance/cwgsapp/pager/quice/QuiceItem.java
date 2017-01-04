@@ -3,7 +3,7 @@ package com.isoftstone.finance.cwgsapp.pager.quice;
 import com.litesuits.orm.db.annotation.Table;
 import java.io.Serializable;
 
-@Table("QuiceItem")
+//@Table("QuiceItem")
 public class QuiceItem extends BaseFunction
   implements Serializable
 {
