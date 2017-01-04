@@ -9,12 +9,12 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="10.0dip"
+        android:layout_height="10dp"
         android:background="@color/lightwhite" />
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="1.0dip"
+        android:layout_height="1dp"
         android:background="@color/spaceline" />
 
     <ListView

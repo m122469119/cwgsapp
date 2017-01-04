@@ -6,7 +6,8 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.TextView;
 
-import com.jude.rollviewpager.HintView;
+import com.isoftstone.finance.cwgsapp.external.rollvviewpager.HintView;
+
 
 public class TextHintView extends TextView implements HintView {
 	private int length;

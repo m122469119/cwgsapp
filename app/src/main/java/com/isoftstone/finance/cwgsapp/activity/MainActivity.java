@@ -39,12 +39,12 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         this.mMainFragmentAdapter = new MainFragmentAdapter(getSupportFragmentManager());
-        HomeFragment localHomeFragment = HomeFragment.newInstance(this);
-        this.mMainFragmentAdapter.addFrag(localHomeFragment);
-        SearchFragment localSearchFragment = new SearchFragment();
-        this.mMainFragmentAdapter.addFrag(localSearchFragment);
-        PersonalFragment localPersonalFragment = PersonalFragment.newInstance(this);
-        this.mMainFragmentAdapter.addFrag(localPersonalFragment);
+        HomeFragment homeFragment = HomeFragment.newInstance(this);
+        this.mMainFragmentAdapter.addFrag(homeFragment);
+        SearchFragment searchFragment = SearchFragment.newInstance(this);
+        this.mMainFragmentAdapter.addFrag(searchFragment);
+        PersonalFragment personalFragment = PersonalFragment.newInstance(this);
+        this.mMainFragmentAdapter.addFrag(personalFragment);
         this.vp_main.setOffscreenPageLimit(0);
         this.vp_main.setAdapter(this.mMainFragmentAdapter);
         this.mbtl_main.setViewPager(this.vp_main);
