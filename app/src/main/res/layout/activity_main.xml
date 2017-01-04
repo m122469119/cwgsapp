@@ -12,7 +12,7 @@
     <com.isoftstone.finance.cwgsapp.widget.tab.MainBottomTabLayout
         android:id="@+id/main_bottom_tablayout"
         android:layout_width="fill_parent"
-        android:layout_height="55.0dip"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:background="#fff8f8f8" />
 </RelativeLayout>

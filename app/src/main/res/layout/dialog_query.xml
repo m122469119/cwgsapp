@@ -8,13 +8,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50.0dip">
+        android:layout_height="50dp">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="30.0dip"
-            android:layout_marginLeft="15.0dip"
-            android:layout_marginTop="10.0dip"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
             android:background="@mipmap/dialogtitleicon"
             android:src="@mipmap/dialogtitleicon" />
 
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10.0dip"
+            android:layout_marginLeft="10dp"
             android:text="弹窗标题"
             android:textColor="#ff414141"
             android:textSize="20.0sp" />
@@ -34,8 +34,8 @@
 
             <ImageView
                 android:id="@+id/iv_closedialog"
-                android:layout_width="40.0dip"
-                android:layout_height="40.0dip"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
                 android:background="@mipmap/dialogtitleclose" />
@@ -44,10 +44,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40.0dip"
-        android:layout_marginLeft="15.0dip"
-        android:layout_marginRight="15.0dip"
-        android:layout_marginTop="10.0dip"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/shape_graycorners"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -55,7 +55,7 @@
         <EditText
             android:id="@+id/et_dialogmessage"
             android:layout_width="wrap_content"
-            android:layout_height="40.0dip"
+            android:layout_height="40dp"
             android:layout_weight="20.0"
             android:background="@color/lightwhite"
             android:textColor="@color/color_black" />
@@ -63,7 +63,7 @@
         <ImageView
             android:id="@+id/iv_dialogsearch"
             android:layout_width="wrap_content"
-            android:layout_height="20.0dip"
+            android:layout_height="20dp"
             android:layout_weight="1.0"
             android:src="@mipmap/dialogsearch" />
     </LinearLayout>
@@ -71,8 +71,8 @@
     <ListView
         android:id="@+id/lv_dialoglist"
         android:layout_width="match_parent"
-        android:layout_height="240.0dip"
-        android:layout_marginLeft="15.0dip"
-        android:layout_marginRight="15.0dip"
-        android:layout_marginTop="15.0dip" />
+        android:layout_height="240dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp" />
 </LinearLayout>

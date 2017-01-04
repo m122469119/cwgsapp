@@ -9,7 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 
-import com.jude.rollviewpager.Util;
+import com.isoftstone.finance.cwgsapp.external.rollvviewpager.Util;
 
 /**
  * Created by Mr.Jude on 2016/1/10.

@@ -8,7 +8,7 @@
         android:id="@id/Load_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10.0dip"
+        android:layout_margin="10dp"
         android:gravity="center_horizontal"
         android:text="加载进度" />
 
@@ -16,7 +16,7 @@
         android:id="@id/tv_loadapk"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15.0dip"
+        android:layout_marginLeft="15dp"
         android:text="加载进度" />
 
     <ProgressBar
@@ -24,6 +24,6 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10.0dip"
+        android:layout_margin="10dp"
         android:max="100" />
 </LinearLayout>

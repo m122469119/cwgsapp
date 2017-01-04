@@ -1,5 +1,6 @@
 package com.isoftstone.finance.cwgsapp.adapter;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,13 +38,13 @@ public class HomeViewPagerAdapter extends LoopPagerAdapter
   {
     this.url = ((HomeAd)this.homeAds.get(paramInt)).getUrl();
     String str = ((HomeAd)this.homeAds.get(paramInt)).getTitle();
-    View localView = View.inflate(CwgsApplication.getAppContext(), R.layout.layout_item_homevp, null);
-    SmartImageView localSmartImageView = (SmartImageView)localView.findViewById(R.id.siv_rl);
-    TextView localTextView = (TextView)localView.findViewById(R.id.tv_rl_text);
-    localSmartImageView.setImageResource(R.mipmap.common_banner);
-    localSmartImageView.setScaleType(ImageView.ScaleType.FIT_XY);
-    localSmartImageView.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-    localSmartImageView.setImageUrl(this.url, new SmartImageTask.OnCompleteListener()
+    View view = View.inflate(paramViewGroup.getContext(), R.layout.layout_item_homevp, null);
+    SmartImageView smartImageView = (SmartImageView)view.findViewById(R.id.siv_rl);
+    TextView textView = (TextView)view.findViewById(R.id.tv_rl_text);
+    smartImageView.setImageResource(R.mipmap.common_banner);
+    smartImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+    smartImageView.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+    smartImageView.setImageUrl(this.url, new SmartImageTask.OnCompleteListener()
     {
       public void onFail()
       {
@@ -53,7 +54,7 @@ public class HomeViewPagerAdapter extends LoopPagerAdapter
       {
       }
     });
-    localTextView.setText(str);
-    return localView;
+    textView.setText(str);
+    return view;
   }
 }
