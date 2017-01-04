@@ -3,75 +3,77 @@ package com.isoftstone.finance.cwgsapp.external.rollvviewpager.hintview;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
+
 import com.isoftstone.finance.cwgsapp.external.rollvviewpager.HintView;
 
-public abstract class ShapeHintView extends LinearLayout
-  implements HintView
-{
-  private Drawable dot_focus;
-  private Drawable dot_normal;
-  private int lastPosition = 0;
-  private int length = 0;
-  private ImageView[] mDots;
+public abstract class ShapeHintView extends LinearLayout implements HintView {
+	private ImageView[] mDots;
+	private int length = 0;
+	private int lastPosition = 0;
+	
+	private Drawable dot_normal;
+	private Drawable dot_focus;
+	
+	public ShapeHintView(Context context){
+		super(context);
+	}
+	
+	public ShapeHintView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
 
-  public ShapeHintView(Context paramContext)
-  {
-    super(paramContext);
-  }
 
-  public ShapeHintView(Context paramContext, AttributeSet paramAttributeSet)
-  {
-    super(paramContext, paramAttributeSet);
-  }
+    public abstract Drawable makeFocusDrawable();
 
-  public void initView(int paramInt1, int paramInt2)
-  {
-    removeAllViews();
-    setOrientation(HORIZONTAL);
-    switch (paramInt2)
-    {
-    default:
-    case 0:
-    case 1:
-    case 2:
-    }
-    while (true)
-    {
-      this.length = paramInt1;
-      this.mDots = new ImageView[paramInt1];
-      this.dot_focus = makeFocusDrawable();
-      this.dot_normal = makeNormalDrawable();
-      for (int i = 0; i < paramInt1; i++)
-      {
-        this.mDots[i] = new ImageView(getContext());
-        LinearLayout.LayoutParams localLayoutParams = new LinearLayout.LayoutParams(-2, -2);
-        localLayoutParams.setMargins(10, 0, 10, 0);
-        this.mDots[i].setLayoutParams(localLayoutParams);
-        this.mDots[i].setBackgroundDrawable(this.dot_normal);
-        addView(this.mDots[i]);
-      }
-      setGravity(19);
-      continue;
-//      setGravity(17);
-//      continue;
-//      setGravity(21);
-    }
-//    setCurrent(0);
-  }
+    public abstract Drawable makeNormalDrawable();
 
-  public abstract Drawable makeFocusDrawable();
+	@Override
+	public void initView(int length, int gravity) {
+        removeAllViews();
+		lastPosition = 0;
+		setOrientation(HORIZONTAL);
+		switch (gravity) {
+		case 0:
+			setGravity(Gravity.LEFT| Gravity.CENTER_VERTICAL);
+			break;
+		case 1:
+			setGravity(Gravity.CENTER);
+			break;
+		case 2:
+			setGravity(Gravity.RIGHT| Gravity.CENTER_VERTICAL);
+			break;
+		}
+		
+		this.length = length;
+		mDots = new ImageView[length];
+		
+		dot_focus = makeFocusDrawable();
+		dot_normal = makeNormalDrawable();
+		
+        for (int i = 0; i < length; i++) {  
+        	mDots[i]=new ImageView(getContext());
+        	LayoutParams dotlp = new LayoutParams(
+        			LayoutParams.WRAP_CONTENT,
+        			LayoutParams.WRAP_CONTENT);
+        	dotlp.setMargins(10, 0, 10, 0); 
+        	mDots[i].setLayoutParams(dotlp);
+        	mDots[i].setBackgroundDrawable(dot_normal);
+        	addView(mDots[i]);
+        }
 
-  public abstract Drawable makeNormalDrawable();
+        setCurrent(0);
+	}
 
-  public void setCurrent(int paramInt)
-  {
-    if ((paramInt < 0) || (paramInt > -1 + this.length))
-      return;
-    this.mDots[this.lastPosition].setBackgroundDrawable(this.dot_normal);
-    this.mDots[paramInt].setBackgroundDrawable(this.dot_focus);
-    this.lastPosition = paramInt;
-  }
+	@Override
+	public void setCurrent(int current) {
+		if (current < 0 || current > length - 1) {  
+            return;  
+        } 
+        mDots[lastPosition].setBackgroundDrawable(dot_normal);
+        mDots[current].setBackgroundDrawable(dot_focus);
+        lastPosition = current;  
+	}
 }

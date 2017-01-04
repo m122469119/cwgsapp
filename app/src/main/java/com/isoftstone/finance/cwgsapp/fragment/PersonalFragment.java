@@ -269,9 +269,9 @@ public class PersonalFragment extends Fragment
         String str2 = this.sp.getString("versionCode", "1.1.0");
         this.tvVersioncode.setText("当前版本" + str2);
         String str3 = this.context.getCacheDir().getPath();
-        File localFile = new File(str3 + "/" + "userhead.png");
-        if (localFile.exists())
-            this.headimage.setImageBitmap(BitmapFactory.decodeFile(localFile.getAbsolutePath()));
+        File file = new File(str3 + "/" + "userhead.png");
+        if (file.exists())
+            this.headimage.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
         while (true) {
             this.headimage.setOnClickListener(this);
             this.ll_bindequip.setOnClickListener(this);

@@ -3,31 +3,37 @@ package com.isoftstone.finance.cwgsapp.external.rollvviewpager.hintview;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+
 import com.isoftstone.finance.cwgsapp.external.rollvviewpager.Util;
 
+/**
+ * Created by Mr.Jude on 2016/1/10.
+ */
 public class ColorPointHintView extends ShapeHintView {
     private int focusColor;
     private int normalColor;
 
-    public ColorPointHintView(Context paramContext, int paramInt1, int paramInt2) {
-        super(paramContext);
-        this.focusColor = paramInt1;
-        this.normalColor = paramInt2;
+    public ColorPointHintView(Context context,int focusColor,int normalColor) {
+        super(context);
+        this.focusColor = focusColor;
+        this.normalColor = normalColor;
     }
 
+    @Override
     public Drawable makeFocusDrawable() {
-        GradientDrawable localGradientDrawable = new GradientDrawable();
-        localGradientDrawable.setColor(this.focusColor);
-        localGradientDrawable.setCornerRadius(Util.dip2px(getContext(), 4.0F));
-        localGradientDrawable.setSize(Util.dip2px(getContext(), 8.0F), Util.dip2px(getContext(), 8.0F));
-        return localGradientDrawable;
+        GradientDrawable dot_focus = new GradientDrawable();
+        dot_focus.setColor(focusColor);
+        dot_focus.setCornerRadius(Util.dip2px(getContext(), 4));
+        dot_focus.setSize(Util.dip2px(getContext(), 8), Util.dip2px(getContext(), 8));
+        return dot_focus;
     }
 
+    @Override
     public Drawable makeNormalDrawable() {
-        GradientDrawable localGradientDrawable = new GradientDrawable();
-        localGradientDrawable.setColor(this.normalColor);
-        localGradientDrawable.setCornerRadius(Util.dip2px(getContext(), 4.0F));
-        localGradientDrawable.setSize(Util.dip2px(getContext(), 8.0F), Util.dip2px(getContext(), 8.0F));
-        return localGradientDrawable;
+        GradientDrawable dot_normal = new GradientDrawable();
+        dot_normal.setColor(normalColor);
+        dot_normal.setCornerRadius(Util.dip2px(getContext(), 4));
+        dot_normal.setSize(Util.dip2px(getContext(), 8), Util.dip2px(getContext(), 8));
+        return dot_normal;
     }
 }

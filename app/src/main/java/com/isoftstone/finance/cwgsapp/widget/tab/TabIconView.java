@@ -54,8 +54,10 @@ public class TabIconView extends ImageView {
 
     protected void onDraw(Canvas paramCanvas) {
         super.onDraw(paramCanvas);
-        if (this.mPaint == null)
+        if (this.mPaint == null){
             return;
+        }
+
         this.mPaint.setAlpha(255 - this.mSelectedAlpha);
         paramCanvas.drawBitmap(this.mNormalIcon, null, this.mNormalRect, this.mPaint);
         this.mPaint.setAlpha(this.mSelectedAlpha);
