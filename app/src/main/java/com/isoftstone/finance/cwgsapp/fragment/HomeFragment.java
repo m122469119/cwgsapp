@@ -92,6 +92,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void initPager() {
+        if(this.homeAds != null && this.homeAds.size() > 0){
+            this.homeAds.clear();
+        }
         this.pagerList = new ArrayList();
         this.pagerList.add(new WaitApprovalPager(getActivity()));
         this.pagerList.add(new DoneApprovalPager(getActivity()));
