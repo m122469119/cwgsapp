@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -50,8 +51,8 @@ public class WebImage
       TrustManager[] arrayOfTrustManager = new TrustManager[1];
       arrayOfTrustManager[0] = myX509TrustManager;
       localSSLContext.init(null, arrayOfTrustManager, null);
-      HttpsURLConnection localHttpsURLConnection = (HttpsURLConnection)new URL(paramString).openConnection();
-      localHttpsURLConnection.setSSLSocketFactory(localSSLContext.getSocketFactory());
+      HttpURLConnection localHttpsURLConnection = (HttpURLConnection)new URL(paramString).openConnection();
+//      localHttpsURLConnection.setSSLSocketFactory(localSSLContext.getSocketFactory());
       localHttpsURLConnection.setConnectTimeout(5000);
       localHttpsURLConnection.setReadTimeout(10000);
       Bitmap localBitmap = BitmapFactory.decodeStream((InputStream)localHttpsURLConnection.getContent());
