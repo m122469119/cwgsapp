@@ -36,7 +36,7 @@ public class HomeViewPagerAdapter extends LoopPagerAdapter
 
   public View getView(ViewGroup paramViewGroup, int paramInt)
   {
-    this.url = ((HomeAd)this.homeAds.get(paramInt)).getUrl();
+//    this.url = ((HomeAd)this.homeAds.get(paramInt)).getUrl();
     String str = ((HomeAd)this.homeAds.get(paramInt)).getTitle();
     View view = View.inflate(paramViewGroup.getContext(), R.layout.layout_item_homevp, null);
     SmartImageView smartImageView = (SmartImageView)view.findViewById(R.id.siv_rl);
@@ -44,7 +44,7 @@ public class HomeViewPagerAdapter extends LoopPagerAdapter
     smartImageView.setImageResource(R.mipmap.common_banner);
     smartImageView.setScaleType(ImageView.ScaleType.FIT_XY);
     smartImageView.setLayoutParams(new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-    smartImageView.setImageUrl(this.url, new SmartImageTask.OnCompleteListener()
+    smartImageView.setImageUrl("http://images.cnitblog.com/blog/430074/201302/01220037-4e6a57c1199748fea9f8391e7e0548d7.jpg", new SmartImageTask.OnCompleteListener()
     {
       public void onFail()
       {
